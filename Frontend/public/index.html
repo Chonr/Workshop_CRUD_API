@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="login-container">
+        <div class="top-bar"><br></div>
+        <br>
+        <div class="header">
+            <img src="img/tu-logo.png" alt="Profile Picture" class="profile-image">
+            <div class="header-text">
+                <h1>Login Page</h1>
+                <p id="displayNameTH"></p>
+                <p id="status"></p>
+            </div>
+        </div>
+        
+        <form id="loginForm">
+            <label for="username">Username :</label>
+            <input type="text" id="username" placeholder="Enter your username" name="username" required>
+            <span id="usernameError" class="error-message"></span>
+            
+            <label for="password">Password :</label>
+            <div class="password-container">
+            <input type="password" id="password" class="field_password js password-field" placeholder="Enter your password" name="password" required>
+            <div class="field_indicator" id="togglePassword">
+                <i class="ri-eye-off-fill" id="eyeIcon"></i>
+            </div></div>
+            <span id="passwordError" class="error-message"></span>
+
+            <label for="role">Role :</label>
+            <select id="role" required >
+                <option value="" disabled selected>&nbsp;Select your role</option>
+                <option value="student">Student</option>
+                <option value="lecturer">Lecturer</option>
+            </select>
+            <span id="roleError" class="error-message"></span>
+            <br>
+            <button type="button" class="login-button" onclick="submitLogin()">Login</button>
+            
+        </form>
+
+        <div class="bottom-buttons">
+            <button type="button" class="request-button" onclick="requestForm()">Request Form</button>
+            <div class="spacer"></div>
+            <button type="button" class="logout-button" onclick="logout()">Logout</button>
+        </div>
+        
+
+        <div id="message"></div>
+        <button id="openButton" onclick="toggleDetails()" style="display:none;">Open</button>
+        <div id="response" class="message-box" style="display: none;"></div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
